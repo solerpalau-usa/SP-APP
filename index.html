@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#053658" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./globleStyles.css" />
+    <title>Soler Palau USA | App</title>
+    <style>
+      body {
+        background-color: whitesmoke;
+        overflow: hidden; /* Prevents scrolling during load */
+      }
+
+      .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003b5c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 0s 1s; /* Visibility transitions to hidden after opacity */
+}
+
+.content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.session-active .loader-container {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 0s, opacity 1s ease; /* Immediately make visibility hidden when transitioning */
+}
+
+.session-active .content {
+    display: block;
+    opacity: 1;
+}
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="loader" class="loader-container">
+      <img src="./assets/images/blue-loading-screen.gif" alt="Loading...">
+  </div>
+  <div id="content" class="content">
+
+    <div class="top-div top-div-iphone-se">
+      <img src="./assets/images/whitelogo.png" alt="logo" />
+    </div>
+
+    <main>
+      <!-- Grid of icons and links -->
+
+      <div
+        class="grid-container grid-container-iphone-se grid-container-iphone-12 grid-container-iphone-14"
+      >
+      <div style="
+    position: relative; /* Needed to position the overlay */
+    font-size: 50px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center; /* Ensures text is centered vertically */
+    justify-content: center; /* Ensures text is centered horizontally */
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    border-radius: 20px;
+    background-image: url('https://www.solerpalau-usa.com/images/banners/US_Mobile_Image_v1.webp');
+    background-size: cover;
+    background-position: center;
+">
+    <div style="
+        position: absolute; /* Overlay covers the entire parent div */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .1); /* Dark overlay for better text visibility */
+        border-radius: 20px; /* Match parent's border-radius */
+    "></div>
+    <span style="
+        position: relative; /* Ensures text is above the overlay */
+        color: whitesmoke;
+        font-weight: 600;
+        letter-spacing: 1px;
+        z-index: 1; /* Ensures text is not blocked by the overlay */
+    ">
+        Explore S&P USA
+    </span>
+</div>
+<div class="icon-grid">
+  <a href="./pages/cross-ref.html" class="icon-wrapper" style="background-image: url('https://www.solerpalau-usa.com/images/pages/resources/comp-cross.webp');">
+      <div class="icon-titles">Cross References</div>
+  </a>
+  <a href="./pages/products.html" class="icon-wrapper" style="background-image: url('https://www.solerpalau-usa.com/images/banners/products.webp');">
+      <div class="icon-titles">Products</div>
+  </a>
+  <a href="./pages/library.html" class="icon-wrapper" style="background-image: url('https://www.solerpalau-usa.com/images/pages/resources/doc.webp');">
+      <div class="icon-titles">Library</div>
+  </a>
+</div>
+
+
+      </div>
+
+      <div id="ios-install-instructions" style="display: none">
+        <div
+          style="
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div id="ios-model-container" class="ios-model">
+            <button id="close-ios-instructions">X</button>
+            <p>To install this application on your mobile device.</p>
+            <p>
+              Tap the
+              <img
+                src="assets/images/Share-outline-01.svg"
+                alt="Share Icon"
+                style="vertical-align: middle; height: 24px; margin: 0 4px"
+              />
+              icon below, and then tap on "Add to home screen".
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <bottom-navbar></bottom-navbar>
+
+    
+    </div>
+
+ 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const loader = document.getElementById('loader');
+          const content = document.getElementById('content');
+          const hasShownGif = sessionStorage.getItem('gifShown');
+      
+          if (!hasShownGif) {
+              // Show loader only if not shown in this session
+              loader.style.display = 'flex';
+              loader.style.opacity = '1';
+              sessionStorage.setItem('gifShown', 'true');  // Mark as shown for this session immediately to prevent re-show on quick reloads
+      
+              setTimeout(() => {
+                  loader.style.opacity = '0';  // Begin fade out
+      
+                  loader.addEventListener('transitionend', () => {
+                      loader.style.visibility = 'hidden';  // Ensure loader is not visible after fade out
+                      content.style.display = 'block';
+                      content.style.opacity = '0';
+      
+                      setTimeout(() => {
+                          content.style.opacity = '1';  // Fade in content after loader is hidden
+                      }, 50);
+                  }, { once: true });
+              }, 3000); // Time the loader shows before fading out
+          } else {
+              // Directly display content if loader has been shown
+              loader.style.display = 'none';
+              loader.style.visibility = 'hidden';
+              content.style.display = 'block';
+              content.style.opacity = '1';
+          }
+      });
+      </script>
+      
+
+
+
+    <script src="./components/navbar.js"></script>
+  </body>
+</html>

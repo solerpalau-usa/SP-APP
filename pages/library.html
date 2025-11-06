@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#053658" />
+    <meta name="robots" content="noindex, nofollow">
+    <title>Library</title>
+    <link rel="stylesheet" href="../globleStyles.css">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5T89QEGBKP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5T89QEGBKP');
+</script>
+<script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+
+
+<body>
+    <div
+        style="color: whitesmoke; background-color: #053658 ; font-size: 25px; width: 100%; position: fixed; top: 0; display: flex; justify-content: space-between; opacity: 1; z-index: 9996;">
+        <div style="padding: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            align-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            font-weight: 500;
+        ">Library</div>
+        <img style="padding: 1rem;" src="../assets/images/logo-mb.png" alt="logo" srcset="">
+    </div>
+    <div id="back-button-container"></div>
+    <library-component></library-component>
+    <bottom-navbar></bottom-navbar>
+    <script src="../components/document-viewer.js"></script>
+    <script src="../components/navbar.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../components/backButton.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+/* Container Styles */
+.my-container {
+    padding-top: 6.25rem; /* Adjust as per the header height */
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/* Table Styles */
+table {
+    font-family: Arial, sans-serif;
+    width: 100%; /* Make the table responsive to its container */
+    font-size: 14px; /* Increase font size for better readability */
+    border-collapse: collapse; /* Remove spacing between table cells */
+}
+
+/* Set a specific width for table headers and cells */
+.header th, #myTable tbody tr td {
+    max-width: 10px; /* Adjust the maximum width as needed */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+    padding: .25rem;
+  
+    
+}
+
+
+
+tbody {
+    background-color: white;
+    color: black;
+    padding-top: 50px; /* Adjust the height as per your sticky header's height */
+    overflow-y: scroll; 
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+
+.header th {
+    font-size: 13px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: whitesmoke;
+    color: #053658;
+    font-weight: 500;
+    padding: 0.5rem;
+    position: relative; /* Add relative positioning to the header */
+}
+
+/* Add a pseudo-element for the bottom border */
+.header th::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* Set the height of the border */
+    background-color: rgba(0, 0, 0, 0.2); /* Color of the border */
+}
+
+/* Hide the 4th column */
+#myTable tbody tr td:nth-child(4),
+.header th:nth-child(4) {
+    display: none;
+}
+
+/* Image Styles */
+.table-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Input Styles */
+input.left-input {
+    width: 90%; /* Wider input fields for touch-friendly usability */
+    letter-spacing: 1px;
+    padding: 0.75rem!important;
+    border-radius: 8px!important;
+    border: 1px solid rgba(0, 0, 0, 0.2)!important;
+    background-color: whitesmoke!important;
+    font-size: 15px!important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* Dropdown Styles */
+.input-dropdown-container {
+    margin-top: 0px;
+}
+
+select#inputroot {
+    width: 67%;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    padding: 0.4rem!important;
+    border-radius: 8px!important;
+    border: 1px solid rgba(0, 0, 0, 0.2)!important;
+    background-color: whitesmoke!important;
+    font-size: 15px!important;
+    color: rgba(0, 0, 0, 0.5)!important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+label {
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.8)!important;
+}
+
+.table-wrapper {
+    max-height: 450px; /* Limit table height for scrolling */
+    overflow-y: auto; /* Add vertical scroll if needed */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: solid 1px rgba(0, 0, 0, 0.200);
+
+}
+
+/* Other Styles */
+.icon-style {
+    background-color: #dddddd;
+    padding: 8px; /* Increase padding for touch-friendliness */
+    border-radius: 5px; /* Slightly round the corners */
+    display: inline-block;
+    cursor: pointer; /* Show pointer cursor for clickable elements */
+}
+
+/* Font Awesome Styles (if needed) */
+.fa, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    /* Add any other necessary styles for your icons */
+}
+
+.disclaimer { 
+    padding: 1rem;
+    font-size: 14px;
+
+}
+
+@media only screen and (max-width: 390px) and (max-height: 844px) {
+   
+
+    .table-wrapper {
+        max-height: 450px;
+        overflow-y: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.200);
+    }
+ 
+}
+
+
+  /* Media Query for devices with viewport size 375x667 */
+  @media only screen and (max-width: 375px) and (max-height: 667px) {
+    .my-container {
+        padding-top: 6.5rem; /* Adjust as per the header height */
+        overflow: hidden;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .input-dropdown-container {
+        margin-top: -5px;
+    }
+
+    .table-wrapper {
+        max-height: 256px;
+        overflow-y: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.200);
+    }
+ 
+}
+
+/* Media Query for devices with viewport size 375x667 */
+@media only screen and (max-width: 360px) and (max-height: 740px) {
+    .my-container {
+        padding-top: 6.5rem; /* Adjust as per the header height */
+        overflow: hidden;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .input-dropdown-container {
+        margin-top: -5px;
+    }
+
+    .table-wrapper {
+        max-height: 256px;
+        overflow-y: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.200);
+    }
+ 
+}
+
+
+
+
+@media only screen and (max-width: 540px) and (max-height: 720px) {
+   
+
+    .table-wrapper {
+        max-height: 350px;
+        overflow-y: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.200);
+    }
+ 
+}
+
+/* Media Query for devices with viewport size 375x667 */
+@media only screen and (max-width: 280px) and (max-height: 653px) {
+
+    .my-container {
+        padding-top: 7rem;
+        overflow: hidden;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    input.left-input {
+        width: 90%;
+        margin-bottom: .5rem;
+        letter-spacing: 1px;
+        padding: 0.55rem!important;
+        border-radius: 8px!important;
+        border: 1px solid rgba(0, 0, 0, 0.2)!important;
+        background-color: whitesmoke!important;
+        font-size: 15px!important;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+    select#inputroot {
+        width: 67%;
+        margin-top: 6px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        padding: 0.4rem!important;
+        border-radius: 8px!important;
+        border: 1px solid rgba(0, 0, 0, 0.2)!important;
+        background-color: whitesmoke!important;
+        font-size: 15px!important;
+        color: rgba(0, 0, 0, 0.5)!important;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+    .table-wrapper {
+        max-height: 233px;
+        overflow-y: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.200);
+    }
+   
+
+    .table-wrapper {
+        max-height: 350px;
+        overflow-y: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: solid 1px rgba(0, 0, 0, 0.200);
+    }
+ 
+}
+
+
+
+
