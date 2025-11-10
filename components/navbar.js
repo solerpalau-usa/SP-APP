@@ -220,28 +220,28 @@ class BottomNavbar extends HTMLElement {
     
   
         <nav>
-          <a class="nav-link" href="https://solerpalau-usa.github.io/sp-app/">
-          <img src="https://solerpalau-usa.github.io/sp-app/assets/images/home.svg" alt="home" class="icon-color">
+          <a class="nav-link" href="https://solerpalau-usa.github.io/SP-APP/">
+          <img src="https://solerpalau-usa.github.io/SP-APP/assets/images/home.svg" alt="home" class="icon-color">
             <span class="nav-icon"></span><br>Home
           </a>
           <a class="nav-link" id="search-icon">
-          <img src="https://solerpalau-usa.github.io/sp-app/assets/images/search-icon.svg" alt="Search" class="icon-color">
+          <img src="https://solerpalau-usa.github.io/SP-APP/assets/images/search-icon.svg" alt="Search" class="icon-color">
           <span class="nav-icon"></span><br>Search
           </a>
-          <a class="nav-link" href="https://solerpalau-usa.github.io/sp-app/pages/products.html">
-          <img src="https://solerpalau-usa.github.io/sp-app/assets/images/fan-white.svg" alt="Products" class="icon-color">
+          <a class="nav-link" href="https://solerpalau-usa.github.io/SP-APP/pages/products.html">
+          <img src="https://solerpalau-usa.github.io/SP-APP/assets/images/fan-white.svg" alt="Products" class="icon-color">
             <span class="nav-icon"></span><br>Products
           </a>
-          <a class="nav-link" href="https://solerpalau-usa.github.io/sp-app/pages/library.html">
-          <img src="https://solerpalau-usa.github.io/sp-app/assets/images/library.svg" alt="Products" class="icon-color">
+          <a class="nav-link" href="https://solerpalau-usa.github.io/SP-APP/pages/library.html">
+          <img src="https://solerpalau-usa.github.io/SP-APP/assets/images/library.svg" alt="Products" class="icon-color">
             <span class="nav-icon"></span><br>Library
           </a>
-          <a class="nav-link" href="https://solerpalau-usa.github.io/sp-app/pages/cross-ref.html">
-          <img src="https://solerpalau-usa.github.io/sp-app/assets/images/right-left-white.svg" alt="Products" class="icon-color">
+          <a class="nav-link" href="https://solerpalau-usa.github.io/SP-APP/pages/cross-ref.html">
+          <img src="https://solerpalau-usa.github.io/SP-APP/assets/images/right-left-white.svg" alt="Products" class="icon-color">
             <span class="nav-icon"></span><br>Cross-Ref
           </a>
-          <a class="nav-link" href="https://solerpalau-usa.github.io/sp-app/pages/important-links.html">
-          <img src="https://solerpalau-usa.github.io/sp-app/assets/images/links-nav.svg" alt="Products" class="icon-color">
+          <a class="nav-link" href="https://solerpalau-usa.github.io/SP-APP/pages/important-links.html">
+          <img src="https://solerpalau-usa.github.io/SP-APP/assets/images/links-nav.svg" alt="Products" class="icon-color">
             <span class="nav-icon"></span><br>Links
           </a>
         </nav>
@@ -339,7 +339,7 @@ class BottomNavbar extends HTMLElement {
     }
 
     // Fetch the data from your JSON file
-    fetch('https://solerpalau-usa.github.io/sp-app/data/products.json') // Replace with the actual path to your JSON file
+    fetch('https://solerpalau-usa.github.io/SP-APP/data/products.json') // Replace with the actual path to your JSON file
       .then((response) => response.json())
       .then((data) => {
         // Filter the data based on the query
@@ -447,11 +447,11 @@ class BottomNavbar extends HTMLElement {
             let modelsDisplayHtml = '';
             if (result.models && result.models.length > 0) {
                 const initialModelsHtml = result.models.slice(0, 3)
-                    .map(model => `<span class="model-name"><a href="https://solerpalau-usa.github.io/sp-app/pages/products.html?product=${encodeURIComponent(result.product)}&series=${encodeURIComponent(result.series.name)}&model=${encodeURIComponent(model.name)}" target="_blank">${model.name}</a></span>`)
+                    .map(model => `<span class="model-name"><a href="https://solerpalau-usa.github.io/SP-APP/pages/products.html?product=${encodeURIComponent(result.product)}&series=${encodeURIComponent(result.series.name)}&model=${encodeURIComponent(model.name)}" target="_blank">${model.name}</a></span>`)
                     .join(', ');
 
                 const fullModelsHtml = result.models
-                    .map(model => `<span class="model-name"><a href="https://solerpalau-usa.github.io/sp-app/pages/products.html?product=${encodeURIComponent(result.product)}&series=${encodeURIComponent(result.series.name)}&model=${encodeURIComponent(model.name)}" target="_blank">${model.name}</a></span>`)
+                    .map(model => `<span class="model-name"><a href="https://solerpalau-usa.github.io/SP-APP/pages/products.html?product=${encodeURIComponent(result.product)}&series=${encodeURIComponent(result.series.name)}&model=${encodeURIComponent(model.name)}" target="_blank">${model.name}</a></span>`)
                     .join(', ');
 
                 // Storing initial and full HTML directly on the item to be accessible from the toggle event
@@ -491,7 +491,7 @@ class BottomNavbar extends HTMLElement {
             resultItem.addEventListener('click', (event) => {
                 if (!event.target.closest('.document-links a, .model-name a, .models-toggle')) {
                     event.preventDefault(); // This might not be necessary unless further actions are needed
-                    window.location.href = `https://solerpalau-usa.github.io/sp-app/pages/products.html?product=${resultItem.dataset.productName}&series=${resultItem.dataset.seriesName}`;
+                    window.location.href = `https://solerpalau-usa.github.io/SP-APP/pages/products.html?product=${resultItem.dataset.productName}&series=${resultItem.dataset.seriesName}`;
                 }
             });
         });
